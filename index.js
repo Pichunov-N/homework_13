@@ -21,8 +21,7 @@ getPost()
 //Task 2
 const isValidDateFormat = function (str) {
     const regexp = /^\d\d\d\d\/\d\d\/\d\d \d\d:\d\d$/g;
-    const result = str.match(regexp)
-    return result !== null
+    return str.match(regexp) !== null
 }
 
 console.log(isValidDateFormat("2012/09/18 12:10")); // true
