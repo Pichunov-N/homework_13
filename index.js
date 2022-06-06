@@ -1,3 +1,4 @@
+//Task 1
 import storage from './storage.js'
 
 const getPost = async () => {
@@ -17,13 +18,11 @@ const getPost = async () => {
 getPost()
 
 
-
+//Task 2
 const isValidDateFormat = function (str) {
-    const regexp = /\d\d\d\d\/\d\d\/\d\d \d\d:\d\d/g;
+    const regexp = /^\d\d\d\d\/\d\d\/\d\d \d\d:\d\d$/g;
     const result = str.match(regexp)
-    if (result !== null) {
-        return true
-    } else return false
+    return result !== null
 }
 
 console.log(isValidDateFormat("2012/09/18 12:10")); // true
