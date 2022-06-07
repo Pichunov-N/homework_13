@@ -4,7 +4,7 @@ import storage from './storage.js'
 const getPost = async () => {
     try {
         const findPost = storage.get('body')
-        if (findPost == undefined) {
+        if (findPost) {
             const request = await fetch('https://jsonplaceholder.typicode.com/posts/1');
             const response = await request.json();
             storage.set('body', response);
@@ -19,8 +19,8 @@ getPost()
 
 
 //Task 2
-const isValidDateFormat = function (str) {
-    const regexp = /^\d\d\d\d\/\d\d\/\d\d \d\d:\d\d$/g;
+const isValidDateFormat = str => {
+    const regexp = /^\b\d{4}\b\/\d\d\/\d\d \d\d:\d\d$/g;
     return str.match(regexp) !== null
 }
 
